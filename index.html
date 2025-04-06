@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Read&Rise</title>
+  <link rel="icon" href="./image/WhatsApp Image 2025-04-04 at 00.40.00_fe0f4ca3.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>READ_RISE</h1>
+    <hr class="a">
+    <hr class="b">
+    <hr class="c">
+
+    <div id="book-list"></div>
+  </div>
+
+  <script>
+    const books = [
+      {
+        title: "Atomic Habits",
+        image: "./image/WhatsApp Image 2025-04-06 at 14.38.01_7a9323d2.jpg",
+        description: "This is book one."
+      },
+      {
+        title: "How to Win Friends and Influence People",
+        image: "./image/WhatsApp Image 2025-04-06 at 14.42.13_de2ea956.jpg",
+        description: "This is book two."
+      },
+      {
+        title: "Power Robots Green",
+        image: "./image/WhatsApp Image 2025-04-06 at 14.44.28_1cdbdf9b.jpg",
+        description: "This is book three."
+      }
+    ];
+
+    const bookList = document.getElementById("book-list");
+
+    books.forEach(book => {
+      const bookDiv = document.createElement("div");
+      bookDiv.classList.add("book");
+      bookDiv.innerHTML = `
+        <img src="${book.image}" alt="${book.title}">
+        <h3>${book.title}</h3>
+        <p>${book.description}</p>
+        <button onclick="alert('${book.title}')">View</button>
+      `;
+      bookList.appendChild(bookDiv);
+    });
+  </script>
+</body>
+</html>
