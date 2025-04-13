@@ -2,7 +2,7 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #278783;
   text-align: center;
 }
 
@@ -11,19 +11,18 @@ body {
   margin: auto;
   overflow: hidden;
   padding-top: 50px;
-  padding-bottom: 50px; /* مسافة تحت */
+  padding-bottom: 50px;
+  min-height: 100vh; /* تأكد أن المحتوى يملأ الشاشة */
 }
-
 
 h1 {
   font-size: 2.5em;
-  color: #333;
+  color: #ffebd0;
   margin-bottom: 30px;
-  margin-top: 20px; /* مسافة فوق */
+  margin-top: 20px;
   animation: fadeInDown 1s ease-in-out;
-}
-hr {
-  margin: 10px 0;
+  text-decoration: underline solid white 4px;
+  font-style: italic;
 }
 
 
@@ -35,12 +34,13 @@ hr {
 }
 
 .book {
-  background: white;
+  background: #ffebd0;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 250px;
+  height: fit-content;
   transition: transform 0.3s ease-in-out;
   animation: fadeInUp 1s ease-in-out;
 }
@@ -55,11 +55,31 @@ hr {
   height: 220px;
   object-fit: cover;
   border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.book img:hover {
+  transform: scale(1.05);
+}
+
+.book h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+  height: 48px;
+  overflow: hidden;
+  font-style: italic;
+}
+
+.book p {
+  font-size: 0.95em;
+  color: #363636;
+  line-height: 1.5;
+  margin-bottom: 15px;
 }
 
 button {
-  background: #007bff;
-  color: white;
+  background: #278783;
+  color: #ffebd0;
   border: none;
   padding: 10px 15px;
   cursor: pointer;
@@ -67,35 +87,33 @@ button {
   transition: background 0.3s ease-in-out;
 }
 
-.book-list{
+button:hover {
+  background: #1f4e4b;
+}
+
+
+
+.book-list {
   margin-top: 50px !important;
   margin-bottom: 30px !important;
-  
+}
+
+footer {
+  background: #278783;
+  color: #ffebd0;
+  text-align: center;
+  padding: 10px 0;  /* تقليل المسافة داخل الفوتر */
+  font-size: 0.85em;  /* تقليل الحجم */
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  height: 50px;  /* تقليل ارتفاع الفوتر */
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
 }
 
 
-button:hover {
-  background: #0056b3;
-}
 
-.a,
-.b,
-.c {
-  border: none;
-  border-top: 2px solid rgb(118, 118, 118);
-  margin: 20px auto ;
-  
-}
-
-.a {
-  width: 100px;
-}
-.b {
-  width: 200px;
-}
-.c {
-  width: 100px;
-}
 
 /* Animations */
 @keyframes fadeInDown {
