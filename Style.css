@@ -112,6 +112,29 @@ footer {
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
 }
 
+.coming-soon .book-content {
+  filter: blur(7px);
+  pointer-events: none; 
+  user-select: none;
+  position: relative;
+  opacity: 1.9;
+}
+
+.coming-soon::after {
+  content: "Coming Soon";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  z-index: 10;
+  font-weight: bold;
+  pointer-events: none;
+}
 
 
 
