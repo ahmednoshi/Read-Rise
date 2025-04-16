@@ -30,38 +30,44 @@
         image: "./image/WhatsApp Image 2025-04-13 at 20.03.35_9901bccc.jpg",
         description: "A practical guide to building good habits and breaking bad ones, written by James Clear.",
         link: "https://amzn.to/3Yvv26V",
-
-       
+        available: true
       },
       {
         title: "How to Win Friends&Influence People",
         image: "./image/WhatsApp Image 2025-04-06 at 14.42.13_de2ea956.jpg",
         description: "A timeless guide to improving communication and relationships, by Dale Carnegie.",
         link: "https://amzn.to/4cvSln3",
-
+        available: false
       },
       {
         title: "Power Robots Green",
         image: "./image/WhatsApp Image 2025-04-06 at 14.44.28_1cdbdf9b.jpg",
         description: "An exciting journey into eco-friendly robotics and how green technology is shaping the future.",
         link: "https://amzn.to/4ibDLlJ",
-
-
+        available: false
       }
     ];
-
+  
     const bookList = document.getElementById("book-list");
-
+  
     books.forEach(book => {
       const bookDiv = document.createElement("div");
       bookDiv.classList.add("book");
+      if (!book.available) {
+        bookDiv.classList.add("coming-soon");
+      }
       bookDiv.innerHTML = `
-        <img src="${book.image}" alt="${book.title}">
-        <h3>${book.title}</h3>
-        <p>${book.description}</p>
-        <a href="${book.link}" target="_blank" rel="noopener noreferrer">
-        <button>View</button>
-        </a>
+        <div class="book-content">
+          <img src="${book.image}" alt="${book.title}">
+          <h3>${book.title}</h3>
+          <p>${book.description}</p>
+          ${book.available ? 
+            `<a href="${book.link}" target="_blank" rel="noopener noreferrer">
+              <button>View</button>
+            </a>` : 
+            `<div class="coming-text">Coming Soon</div>`
+          }
+        </div>
       `;
       bookList.appendChild(bookDiv);
     });
